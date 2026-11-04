@@ -1,15 +1,21 @@
 # pylint: disable=not-an-iterable
 # pylint: disable=invalid-sequence-index
 from __builtins__ import *
-from go_to import *
+import mv
+import pumpkin
+import sunflower
 
 crop_list = [
     Entities.Tree,
     Entities.Carrot,
     Entities.Carrot,
+    Entities.Carrot,
     Entities.Pumpkin,
     Entities.Pumpkin,
     Entities.Pumpkin,
+    Entities.Pumpkin,
+    Entities.Pumpkin,
+    Entities.Grass,
     Entities.Grass,
     Entities.Grass,
 ]
@@ -56,5 +62,6 @@ def main():
                     use_item(Items.Water)
 
         move(North)
+
 
 main()

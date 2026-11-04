@@ -1,10 +1,13 @@
+# move module
+# ways to get around
+
+# pylint: disable=not-an-iterable
+# pylint: disable=invalid-sequence-index
 from __builtins__ import *
 
-def go_to(x: int, y: int):
+def to(x: int, y: int):
     d_x: int = get_pos_x()
     d_y: int = get_pos_y()
-    print(d_x, x)
-    print(d_y, y)
 
     while (d_x != x) or (d_y != y):
         if d_x < x:
@@ -18,5 +21,5 @@ def go_to(x: int, y: int):
             move(North)
             d_y += 1
         elif d_y > y:
-            move(North)
+            move(South)
             d_y -= 1
