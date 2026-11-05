@@ -15,7 +15,7 @@ crop_list = [
     Entities.Pumpkin,
     Entities.Pumpkin,
     Entities.Pumpkin,
-    Entities.Grass,
+    Entities.Sunflower,
     Entities.Grass,
     Entities.Grass,
 ]
@@ -31,6 +31,13 @@ specific_list = [
     Entities.Carrot,
 ]
 
+tilled_crops = {
+    Entities.Bush,
+    Entities.Carrot,
+    Entities.Pumpkin,
+    Entities.Sunflower
+}
+
 def main():
     crop = Entities.Grass
 
@@ -40,9 +47,12 @@ def main():
         if y == 0:
             move(East)
 
-        crop = crop_list[y]
+        if len(crop_list) > y:
+            crop = crop_list[y]
+        else:
+            crop = Entities.Grass
 
-        should_be_tilled = crop in (Entities.Bush, Entities.Carrot, Entities.Pumpkin)
+        should_be_tilled = crop in tilled_crops
         should_be_watered = False # crop == Entities.Tree
 
         if should_be_tilled and get_ground_type() != Grounds.Soil:
